@@ -1,15 +1,15 @@
-FROM jumpserver/core-base:20250509_094529 AS stage-build
+FROM giraffejump/core-base:20250509_094529 AS stage-build
 
 ARG VERSION
 
-WORKDIR /opt/jumpserver
+WORKDIR /opt/giraffejump
 
 ADD . .
 
-RUN echo > /opt/jumpserver/config.yml \
+RUN echo > /opt/giraffejump/config.yml \
     && \
     if [ -n "${VERSION}" ]; then \
-        sed -i "s@VERSION = .*@VERSION = '${VERSION}'@g" apps/jumpserver/const.py; \
+        sed -i "s@VERSION = .*@VERSION = '${VERSION}'@g" apps/giraffejump/const.py; \
     fi
 
 RUN set -ex \
@@ -53,11 +53,11 @@ RUN set -ex \
 
 COPY --from=stage-build /opt /opt
 COPY --from=stage-build /usr/local/bin /usr/local/bin
-COPY --from=stage-build /opt/jumpserver/apps/libs/ansible/ansible.cfg /etc/ansible/
+COPY --from=stage-build /opt/giraffejump/apps/libs/ansible/ansible.cfg /etc/ansible/
 
-WORKDIR /opt/jumpserver
+WORKDIR /opt/giraffejump
 
-VOLUME /opt/jumpserver/data
+VOLUME /opt/giraffejump/data
 
 ENTRYPOINT ["./entrypoint.sh"]
 
