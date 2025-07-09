@@ -2,7 +2,7 @@
 name = "GiraffeJump"
 version = "v4.0"
 description = "Most popular open source bastion host"
-authors = [{ name = "ibuler", email = "ibuler@qq.com" }]
+authors = [{ name = "Giraffe", email = "info@giraffe.ge" }]
 requires-python = ">=3.11"
 dependencies = [
     'aiofiles==23.1.0',
