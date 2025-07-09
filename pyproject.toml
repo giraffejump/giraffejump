@@ -1,5 +1,5 @@
 [project]
-name = "jumpserver"
+name = "GiraffeJump"
 version = "v4.0"
 description = "Most popular open source bastion host"
 authors = [{ name = "ibuler", email = "ibuler@qq.com" }]
@@ -155,8 +155,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://www.jumpserver.com"
-Documentation = "https://www.jumpserver.com/docs"
+Homepage = "https://giraffe.ge"
+Documentation = "https://giraffe.ge"
 
 [tool.uv]
 resolution = "lowest-direct"
